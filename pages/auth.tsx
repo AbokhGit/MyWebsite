@@ -82,10 +82,6 @@ const Auth = () => {
                         <button onClick={variant ===  'login' ?  login : register} className="bg-amber-700 text-white w-full py-3 rounded-md mt-10 hover:bg-amber-900 transition">
                             {variant == 'login' ? 'Login' : 'Sign Up'}
                         </button>
-                        <div 
-                            onClick={() => signIn('google', {callbackUrl:'/index'})}
-                            className='flex flex-rov items-center gap-4 mt-8 justify-center'>
-                        </div>
                         <p className="text-neutral-500 mt-12">
                             {variant == 'login' ?  'First on using  EnjoyLand?' : 'Already had an account?'}
                             <span onClick={toggleVariant} className=" text-white ml-1 hover:underline cursor-pointer">
