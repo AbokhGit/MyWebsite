@@ -3,7 +3,6 @@ import useMovie from "@/hooks/useMovie";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import { useRouter } from "next/router";
-import MovieCard from "@/components/MovieCard";
 
 const Watch = () => {
     const router = useRouter();

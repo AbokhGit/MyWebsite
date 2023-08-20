@@ -51,7 +51,7 @@ const Navbar = () => {
                ${ShowBackground ? 'bg-zinc-900 bg-opacity-90' : ''}
                `}
             >
-                <img className="h-4 lg:h-7" src="/images/logo.png" alt="Logo"/>
+                <span className="h-4 lg:h-7 text-amber-700 font-extrabold text-lg">EnjoyLand</span>
                 <div
                   className="
                     flex-row
@@ -80,7 +80,6 @@ const Navbar = () => {
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
                         <BsBell/>
                     </div>
-
                     <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
                         <div className="w-6 h-8 lg:w-10 rounded-md overflow-hidden">
                             <img src="/images/default-blue.png" alt="" />

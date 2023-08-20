@@ -22,7 +22,7 @@ const Auth = () => {
             await signIn('credentials', {
                 email,
                 password,
-                callbackUrl: '/profiles'
+                callbackUrl: '/'
             });
 
         } catch (error) {
@@ -44,10 +44,10 @@ const Auth = () => {
     }, [email, name, password, login]);
     
     return (
-        <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+        <div className="relative h-full w-full bg-slate-900 bg-no-repeat bg-center bg-fixed bg-cover">
             <div className="bg-black w-full h-full lg:bg-opacity-50">
                 <nav className="px-12 py-5">
-                    <img src="/images/logo.png" alt="Logo" className="h-12"/>
+                    <span className="h-4 lg:h-7 text-amber-700 font-extrabold text-lg">EnjoyLand</span>
                 </nav>
                 <div className="flex justify-center">
                     <div className="bg-black bg-opacity-70 px-16 py-16 self-center lg:w-2/5 lg:max-w-md rounded-md w-full">
@@ -79,11 +79,11 @@ const Auth = () => {
                                 value={password}                         
                             />
                         </div>
-                        <button onClick={variant ===  'login' ?  login : register} className="bg-red-600 text-white w-full py-3 rounded-md mt-10 hover:bg-red-700 transition">
+                        <button onClick={variant ===  'login' ?  login : register} className="bg-amber-700 text-white w-full py-3 rounded-md mt-10 hover:bg-amber-900 transition">
                             {variant == 'login' ? 'Login' : 'Sign Up'}
                         </button>
                         <div 
-                            onClick={() => signIn('google', {callbackUrl:'/profiles'})}
+                            onClick={() => signIn('google', {callbackUrl:'/index'})}
                             className='flex flex-rov items-center gap-4 mt-8 justify-center'>
                             <div className='w-10 
                             h-10 
@@ -98,7 +98,7 @@ const Auth = () => {
                                 <FcGoogle size={30}/>
                             </div>
                             <div 
-                            onClick={() => signIn('github', {callbackUrl:'/profiles'})}
+                            onClick={() => signIn('github', {callbackUrl:'/index'})}
                             className='w-10 
                             h-10 
                             bg-white 
@@ -113,7 +113,7 @@ const Auth = () => {
                             </div>
                         </div>
                         <p className="text-neutral-500 mt-12">
-                            {variant == 'login' ?  'First on using  Netflix?' : 'Already had an account?'}
+                            {variant == 'login' ?  'First on using  EnjoyLand?' : 'Already had an account?'}
                             <span onClick={toggleVariant} className=" text-white ml-1 hover:underline cursor-pointer">
                                {variant == 'login' ? 'Create an account' : 'Login'} 
                             </span>
