@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <Navbar/>
-      <div className='lg:px-56 px-2'>
+      <div className='lg:px-56 px-20'>
         <InfoModal visible={isOpen} onClose={closeModal}/>
         <BillBoard/>
         <div className='pb-40'>
