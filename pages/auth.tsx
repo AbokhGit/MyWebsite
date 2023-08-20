@@ -3,9 +3,6 @@ import { useCallback, useState  } from "react";
 import Input from "@/components/input";
 import { signIn } from 'next-auth/react';
 
-import {FcGoogle} from 'react-icons/fc';
-import {FaGithub} from 'react-icons/fa';
-
 const Auth = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -89,6 +86,8 @@ const Auth = () => {
                             </span>
                         </p>
                     </div> 
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615067240084342"
+     crossOrigin="anonymous"></script>
                 </div>
             </div>
         </div>

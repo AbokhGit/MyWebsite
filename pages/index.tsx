@@ -7,7 +7,7 @@ import MovieList from '@/components/MovieList';
 import useMovieList from '@/hooks/useMovieList';
 import useFavorites from '@/hooks/useFavorites';
 import InfoModal from '@/components/InfoModal';
-import useInfoModal from '@/hooks/useInfoModal';
+import useInfoModal from '@/hooks/useInfoModal'
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -32,11 +32,17 @@ export default function Home() {
 
   return (
     <>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615067240084342"
+     crossOrigin="anonymous"></script>
       <InfoModal visible={isOpen} onClose={closeModal}/>
       <Navbar/>
       <BillBoard/>
       <div className='pb-40'>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615067240084342"
+     crossOrigin="anonymous"></script>
         <MovieList title='Tranding Now' data={movies}/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2615067240084342"
+     crossOrigin="anonymous"></script>
         <MovieList title='My List' data={favorites}/>
       </div>
     </>
