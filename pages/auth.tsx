@@ -85,32 +85,6 @@ const Auth = () => {
                         <div 
                             onClick={() => signIn('google', {callbackUrl:'/index'})}
                             className='flex flex-rov items-center gap-4 mt-8 justify-center'>
-                            <div className='w-10 
-                            h-10 
-                            bg-white 
-                            rounded-full 
-                            flex 
-                            items-center 
-                            justify-center 
-                            cursor-pointer 
-                            hover:opacity-80
-                            transition'>
-                                <FcGoogle size={30}/>
-                            </div>
-                            <div 
-                            onClick={() => signIn('github', {callbackUrl:'/index'})}
-                            className='w-10 
-                            h-10 
-                            bg-white 
-                            rounded-full 
-                            flex 
-                            items-center 
-                            justify-center 
-                            cursor-pointer 
-                            hover:opacity-80
-                            transition'>
-                                <FaGithub size={30}/>
-                            </div>
                         </div>
                         <p className="text-neutral-500 mt-12">
                             {variant == 'login' ?  'First on using  EnjoyLand?' : 'Already had an account?'}
