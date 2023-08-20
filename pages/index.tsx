@@ -32,13 +32,17 @@ export default function Home() {
 
   return (
     <>
-      <InfoModal visible={isOpen} onClose={closeModal}/>
       <Navbar/>
-      <BillBoard/>
-      <div className='pb-40'>
-        <MovieList title='Tranding Now' data={movies}/>
-        <MovieList title='My List' data={favorites}/>
+      <div className='lg:px-56 px-20'>
+        <InfoModal visible={isOpen} onClose={closeModal}/>
+        <BillBoard/>
+        <div className='pb-40'>
+          <MovieList title='Tranding Now' data={movies}/>
+          <MovieList title='My List' data={favorites}/>
+        </div>
+        
       </div>
+      
     </>
   )
 }

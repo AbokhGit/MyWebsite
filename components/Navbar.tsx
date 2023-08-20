@@ -3,13 +3,11 @@ import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
 
 import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
-import AccountMenu from "./AccountMenu";
 
 const TOP_OFFSET = 66;
 
 const Navbar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
-    const [showAccountMenu, setShowAccountMenu] = useState(false);
     const [ShowBackground, setShowBackground] = useState(false);
 
 
@@ -32,10 +30,6 @@ const Navbar = () => {
         setShowMobileMenu((current) => !current);
     }, []);
 
-    const toggleAccountMenu = useCallback(() => {
-        setShowAccountMenu((current) => !current);
-    }, []);
-
     return(
         <nav className="w-full fixed z-10">
             <div 
@@ -45,49 +39,37 @@ const Navbar = () => {
                py-6
                flex
                flex-row
-               items-center
+               justify-between
                transition
                duration-500
-               ${ShowBackground ? 'bg-zinc-900 bg-opacity-90' : ''}
+                bg-zinc-900 bg-opacity-100
                `}
             >
-                <img className="h-4 lg:h-7" src="/images/logo.png" alt="Logo"/>
+                <span className="lg:text-2xl text-sm  text-amber-600 lg:font-extrabold font-extrabold">EnjoyLand</span>
                 <div
                   className="
-                    flex-row
-                    ml-8
-                    gap-7
+                    px-20
                     hidden
+                    justify-between
                     lg:flex
+                    w-full
                   "
                 >
-                    <NavbarItem label="Home"/>
+                    <NavbarItem label="OnGoings"/>
+                    <NavbarItem label="Anons"/>
+                    <NavbarItem label="Genre"/>
                     <NavbarItem label="Series"/>
                     <NavbarItem label="Films"/>
-                    <NavbarItem label="New & Popular"/>
-                    <NavbarItem label="My List"/>
-                    <NavbarItem label="Browse by languages"/>
+                    <NavbarItem label="TOP - 10"/>
+                    <NavbarItem label="Search"/>
                 </div>
-                <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+                <div className="w-32 bg-amber-600 px-2 py-1 rounded-md">
+                   <span className="text-white cursor-pointer hover:text-gray-300 transition">My Account</span> 
+                </div> 
+                <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2  cursor-pointer relative">
                     <p className="text-white text-sm">Browse</p>
                     <BsChevronDown className={`w-4 text-white fill-white transition ${showMobileMenu ? 'rotate-180' : 'rotate-0'}`} />
                     <MobileMenu visible={showMobileMenu} />
-                </div>
-                <div className="flex flex-row ml-auto gap-7 items-center">
-                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-                        <BsSearch/>
-                    </div>
-                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-                        <BsBell/>
-                    </div>
-
-                    <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
-                        <div className="w-6 h-8 lg:w-10 rounded-md overflow-hidden">
-                            <img src="/images/default-blue.png" alt="" />
-                        </div>
-                        <BsChevronDown className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} />
-                        <AccountMenu visible={showAccountMenu}/>
-                    </div>
                 </div>
             </div>
         </nav>
